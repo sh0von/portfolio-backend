@@ -1,49 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     <title>API Documentation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        
-        h1 {
-            text-align: center;
-        }
-        
-        h2 {
-            margin-top: 20px;
-        }
-        
-        ol {
-            list-style-type: decimal;
-        }
-        
-        li {
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        
-        strong {
+/* Dark theme styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #3498db;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #3498db;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+strong {
+    color: #3498db;
+}
+
+/* Updated CSS to allow multi-line code within <code> tags */
+    code {
+        background-color: #333;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: Monaco, monospace;
+        white-space: pre; /* Enable multi-line code */
+        color: #fff;
+    }
+    
+    pre code {
+        display: block;
+        padding: 10px;
+        background-color: #333;
+        border: 1px solid #444;
+        overflow-x: auto;
+        white-space: pre-wrap;
+    }
+         .copy-button {
+            cursor: pointer;
             color: #3498db;
+            text-decoration: underline;
         }
-        
-        code {
-            background-color: #f2f2f2;
-            padding: 2px 5px;
-            border-radius: 3px;
-            font-family: Monaco, monospace;
-        }
-        
-        pre code {
-            display: block;
-            padding: 10px;
-            background-color: #f2f2f2;
-            border: 1px solid #ddd;
-            overflow-x: auto;
-            white-space: pre-wrap;
-        }
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Adjust font size for smaller screens */
+    h2 {
+        font-size: 20px;
+    }
+
+    ol {
+        padding-left: 10px;
+    }
+
+    code {
+        margin: 0 2px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -78,6 +118,125 @@
         </li>
     </ol>
 
-    <!-- Repeat the above structure for Skills, Framework, CTF Achievements, and Projects sections -->
+    <h2>Skills:</h2>
+    <ol>
+        <li>
+            <h3>View All Skills</h3>
+            <p><strong>Endpoint:</strong> GET <code>http://localhost:3000/api/skills</code></p>
+            <p><strong>Request Method:</strong> GET</p>
+            <p><strong>Usage:</strong> <code>curl http://localhost:3000/api/skills</code></p>
+        </li>
+        <li>
+            <h3>Create a New Skill Entry</h3>
+            <p><strong>Endpoint:</strong> POST <code>http://localhost:3000/api/skills</code></p>
+            <p><strong>Request Method:</strong> POST</p>
+            <p><strong>Request Headers:</strong></p>
+            <pre><code>Content-Type: application/json</code></pre>
+            <p><strong>Request Body:</strong></p>
+            <pre><code>{
+        "name": "Skill Name",
+        "percentage": 75
+    }</code></pre>
+            <p><strong>Usage:</strong> <code>curl -X POST -H "Content-Type: application/json" -d '{"name":"Skill Name","percentage":75}' http://localhost:3000/api/skills</code></p>
+        </li>
+        <li>
+            <h3>Delete a Skill Entry</h3>
+            <p><strong>Endpoint:</strong> DELETE <code>http://localhost:3000/api/skills/:id</code></p>
+            <p><strong>Request Method:</strong> DELETE</p>
+            <p><strong>Usage:</strong> <code>curl -X DELETE http://localhost:3000/api/skills/:id</code></p>
+        </li>
+    </ol>
+    
+
+    <h2>Frameworks:</h2>
+    <ol>
+        <li>
+            <h3>View All Frameworks</h3>
+            <p><strong>Endpoint:</strong> GET <code>http://localhost:3000/api/frameworks</code></p>
+            <p><strong>Request Method:</strong> GET</p>
+            <p><strong>Usage:</strong> <code>curl http://localhost:3000/api/frameworks</code></p>
+        </li>
+        <li>
+            <h3>Create a New Framework Entry</h3>
+            <p><strong>Endpoint:</strong> POST <code>http://localhost:3000/api/frameworks</code></p>
+            <p><strong>Request Method:</strong> POST</p>
+            <p><strong>Request Headers:</strong></p>
+            <pre><code>Content-Type: application/json</code></pre>
+            <p><strong>Request Body:</strong></p>
+            <pre><code>{
+        "name": "Framework Name",
+        "proficiency": "Framework Proficiency"
+    }</code></pre>
+            <p><strong>Usage:</strong> <code>curl -X POST -H "Content-Type: application/json" -d '{"name":"Framework Name","proficiency":"Framework Proficiency"}' http://localhost:3000/api/frameworks</code></p>
+        </li>
+        <li>
+            <h3>Delete a Framework Entry</h3>
+            <p><strong>Endpoint:</strong> DELETE <code>http://localhost:3000/api/frameworks/:id</code></p>
+            <p><strong>Request Method:</strong> DELETE</p>
+            <p><strong>Usage:</strong> <code>curl -X DELETE http://localhost:3000/api/frameworks/:id</code></p>
+        </li>
+    </ol>
+    
+    <h2>CTF Achievements:</h2>
+    <ol>
+        <li>
+            <h3>View All CTF Achievements</h3>
+            <p><strong>Endpoint:</strong> GET <code>http://localhost:3000/api/ctf-achievements</code></p>
+            <p><strong>Request Method:</strong> GET</p>
+            <p><strong>Usage:</strong> <code>curl http://localhost:3000/api/ctf-achievements</code></p>
+        </li>
+        <li>
+            <h3>Create a New CTF Achievement Entry</h3>
+            <p><strong>Endpoint:</strong> POST <code>http://localhost:3000/api/ctf-achievements</code></p>
+            <p><strong>Request Method:</strong> POST</p>
+            <p><strong>Request Headers:</strong></p>
+            <pre><code>Content-Type: application/json</code></pre>
+            <p><strong>Request Body:</strong></p>
+            <pre><code>{
+        "name": "CTF Name",
+        "position": "CTF Position"
+    }</code></pre>
+            <p><strong>Usage:</strong> <code>curl -X POST -H "Content-Type: application/json" -d '{"name":"CTF Name","position":"CTF Position"}' http://localhost:3000/api/ctf-achievements</code></p>
+        </li>
+        <li>
+            <h3>Delete a CTF Achievement Entry</h3>
+            <p><strong>Endpoint:</strong> DELETE <code>http://localhost:3000/api/ctf-achievements/:id</code></p>
+            <p><strong>Request Method:</strong> DELETE</p>
+            <p><strong>Usage:</strong> <code>curl -X DELETE http://localhost:3000/api/ctf-achievements/:id</code></p>
+        </li>
+    </ol>
+    
+
+    <h2>Projects:</h2>
+    <ol>
+        <li>
+            <h3>View All Projects</h3>
+            <p><strong>Endpoint:</strong> GET <code>http://localhost:3000/api/projects</code></p>
+            <p><strong>Request Method:</strong> GET</p>
+            <p><strong>Usage:</strong> <code>curl http://localhost:3000/api/projects</code></p>
+        </li>
+        <li>
+            <h3>Create a New Project Entry</h3>
+            <p><strong>Endpoint:</strong> POST <code>http://localhost:3000/api/projects</code></p>
+            <p><strong>Request Method:</strong> POST</p>
+            <p><strong>Request Headers:</strong></p>
+            <pre><code>Content-Type: application/json</code></pre>
+            <p><strong>Request Body:</strong></p>
+            <pre><code>{
+        "title": "Project Title",
+        "description": "Project Description",
+        "link": "Project Link",
+        "image": "Project Image URL"
+    }</code></pre>
+            <p><strong>Usage:</strong> <code>curl -X POST -H "Content-Type: application/json" -d '{"title":"Project Title","description":"Project Description","link":"Project Link","image":"Project Image URL"}' http://localhost:3000/api/projects</code></p>
+        </li>
+        <li>
+            <h3>Delete a Project Entry</h3>
+            <p><strong>Endpoint:</strong> DELETE <code>http://localhost:3000/api/projects/:id</code></p>
+            <p><strong>Request Method:</strong> DELETE</p>
+            <p><strong>Usage:</strong> <code>curl -X DELETE http://localhost:3000/api/projects/:id</code></p>
+        </li>
+    </ol>
+    
 </body>
 </html>
