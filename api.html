@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        h2 {
+            margin-top: 20px;
+        }
+        
+        ol {
+            list-style-type: decimal;
+        }
+        
+        li {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        strong {
+            color: #3498db;
+        }
+        
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Monaco, monospace;
+        }
+        
+        pre code {
+            display: block;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Documentation</h1>
+
+    <h2>Languages:</h2>
+    <ol>
+        <li>
+            <h3>View All Languages</h3>
+            <p><strong>Endpoint:</strong> GET <code>http://localhost:3000/api/languages</code></p>
+            <p><strong>Request Method:</strong> GET</p>
+            <p><strong>Usage:</strong> <code>curl http://localhost:3000/api/languages</code></p>
+        </li>
+        <li>
+            <h3>Create a New Language Entry</h3>
+            <p><strong>Endpoint:</strong> POST <code>http://localhost:3000/api/languages</code></p>
+            <p><strong>Request Method:</strong> POST</p>
+            <p><strong>Request Headers:</strong></p>
+            <pre><code>Content-Type: application/json</code></pre>
+            <p><strong>Request Body:</strong></p>
+            <pre><code>{
+    "name": "Language Name",
+    "proficiency": "Language Proficiency"
+}</code></pre>
+            <p><strong>Usage:</strong> <code>curl -X POST -H "Content-Type: application/json" -d '{"name":"Language Name","proficiency":"Language Proficiency"}' http://localhost:3000/api/languages</code></p>
+        </li>
+        <li>
+            <h3>Delete a Language Entry</h3>
+            <p><strong>Endpoint:</strong> DELETE <code>http://localhost:3000/api/languages/:id</code></p>
+            <p><strong>Request Method:</strong> DELETE</p>
+            <p><strong>Usage:</strong> <code>curl -X DELETE http://localhost:3000/api/languages/:id</code></p>
+        </li>
+    </ol>
+
+    <!-- Repeat the above structure for Skills, Framework, CTF Achievements, and Projects sections -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+API Documentation
+
+Languages:
+1. View All Languages
+   Endpoint: GET http://localhost:3000/api/languages
+   Request Method: GET
+   Usage:
+   curl http://localhost:3000/api/languages
+
+2. Create a New Language Entry
+   Endpoint: POST http://localhost:3000/api/languages
+   Request Method: POST
+   Request Headers:
+   - Content-Type: application/json
+   Request Body:
+   {
+     "name": "Language Name",
+     "proficiency": "Language Proficiency"
+   }
+   Usage:
+   curl -X POST -H "Content-Type: application/json" -d '{\"name\":\"Language Name\",\"proficiency\":\"Language Proficiency\"}' http://localhost:3000/api/languages
+
+3. Delete a Language Entry
+   Endpoint: DELETE http://localhost:3000/api/languages/:id
+   Request Method: DELETE
+   Usage:
+   curl -X DELETE http://localhost:3000/api/languages/:id
+
+Skills:
+1. View All Skills
+   Endpoint: GET http://localhost:3000/api/skills
+   Request Method: GET
+   Usage:
+   curl http://localhost:3000/api/skills
+
+2. Create a New Skill Entry
+   Endpoint: POST http://localhost:3000/api/skills
+   Request Method: POST
+   Request Headers:
+   - Content-Type: application/json
+   Request Body:
+   {
+     "name": "Skill Name",
+     "percentage": 75
+   }
+   Usage:
+   curl -X POST -H "Content-Type: application/json" -d '{\"name\":\"Skill Name\",\"percentage\":75}' http://localhost:3000/api/skills
+
+3. Delete a Skill Entry
+   Endpoint: DELETE http://localhost:3000/api/skills/:id
+   Request Method: DELETE
+   Usage:
+   curl -X DELETE http://localhost:3000/api/skills/:id
+
+Framework:
+1. View All Frameworks
+   Endpoint: GET http://localhost:3000/api/frameworks
+   Request Method: GET
+   Usage:
+   curl http://localhost:3000/api/frameworks
+
+2. Create a New Framework Entry
+   Endpoint: POST http://localhost:3000/api/frameworks
+   Request Method: POST
+   Request Headers:
+   - Content-Type: application/json
+   Request Body:
+   {
+     "name": "Framework Name",
+     "proficiency": "Framework Proficiency"
+   }
+   Usage:
+   curl -X POST -H "Content-Type: application/json" -d '{\"name\":\"Framework Name\",\"proficiency\":\"Framework Proficiency\"}' http://localhost:3000/api/frameworks
+
+3. Delete a Framework Entry
+   Endpoint: DELETE http://localhost:3000/api/frameworks/:id
+   Request Method: DELETE
+   Usage:
+   curl -X DELETE http://localhost:3000/api/frameworks/:id
+
+CTF Achievements:
+1. View All CTF Achievements
+   Endpoint: GET http://localhost:3000/api/ctf-achievements
+   Request Method: GET
+   Usage:
+   curl http://localhost:3000/api/ctf-achievements
+
+2. Create a New CTF Achievement Entry
+   Endpoint: POST http://localhost:3000/api/ctf-achievements
+   Request Method: POST
+   Request Headers:
+   - Content-Type: application/json
+   Request Body:
+   {
+     "name": "CTF Achievement Name",
+     "position": "CTF Achievement Position"
+   }
+   Usage:
+   curl -X POST -H "Content-Type: application/json" -d '{\"name\":\"CTF Achievement Name\",\"position\":\"CTF Achievement Position\"}' http://localhost:3000/api/ctf-achievements
+
+3. Delete a CTF Achievement Entry
+   Endpoint: DELETE http://localhost:3000/api/ctf-achievements/:id
+   Request Method: DELETE
+   Usage:
+   curl -X DELETE http://localhost:3000/api/ctf-achievements/:id
+
+Projects:
+1. View All Projects
+   Endpoint: GET http://localhost:3000/api/projects
+   Request Method: GET
+   Usage:
+   curl http://localhost:3000/api/projects
+
+2. Create a New Project Entry
+   Endpoint: POST http://localhost:3000/api/projects
+   Request Method: POST
+   Request Headers:
+   - Content-Type: application/json
+   Request Body:
+   {
+     "title": "Project Title",
+     "description": "Project Description",
+     "link": "Project Link",
+     "image": "Project Image URL"
+   }
+   Usage:
+   curl -X POST -H "Content-Type: application/json" -d '{\"title\":\"Project Title\",\"description\":\"Project Description\",\"link\":\"Project Link\",\"image\":\"Project Image URL\"}' http://localhost:3000/api/projects
+
+3. Delete a Project Entry
+   Endpoint: DELETE http://localhost:3000/api/projects/:id
+   Request Method: DELETE
+   Usage:
+   curl -X DELETE http://localhost:3000/api/projects/:id
